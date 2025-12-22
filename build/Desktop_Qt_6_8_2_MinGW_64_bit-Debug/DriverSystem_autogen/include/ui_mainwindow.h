@@ -84,6 +84,8 @@ public:
     QLineEdit *inputFreeNum;
     QPushButton *btnGenFree;
     QLCDNumber *lcdTimer;
+    QPushButton *btnReturnToMode;
+    QPushButton *btnLogout;
     QWidget *page_5;
     QPushButton *btnModeMock;
     QPushButton *btnModeFree;
@@ -213,7 +215,7 @@ public:
         page_2->setObjectName("page_2");
         tabWidget = new QTabWidget(page_2);
         tabWidget->setObjectName("tabWidget");
-        tabWidget->setGeometry(QRect(20, 50, 721, 281));
+        tabWidget->setGeometry(QRect(20, 50, 621, 281));
         tab = new QWidget();
         tab->setObjectName("tab");
         labelExamQuestion = new QLabel(tab);
@@ -233,10 +235,10 @@ public:
         radioD->setGeometry(QRect(40, 220, 451, 31));
         btnNext = new QPushButton(tab);
         btnNext->setObjectName("btnNext");
-        btnNext->setGeometry(QRect(620, 150, 56, 18));
+        btnNext->setGeometry(QRect(530, 190, 56, 18));
         btnSubmit = new QPushButton(tab);
         btnSubmit->setObjectName("btnSubmit");
-        btnSubmit->setGeometry(QRect(620, 180, 56, 18));
+        btnSubmit->setGeometry(QRect(530, 220, 56, 18));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName("tab_2");
@@ -268,6 +270,12 @@ public:
         lcdTimer->setObjectName("lcdTimer");
         lcdTimer->setGeometry(QRect(513, 10, 151, 41));
         lcdTimer->setSegmentStyle(QLCDNumber::SegmentStyle::Flat);
+        btnReturnToMode = new QPushButton(page_2);
+        btnReturnToMode->setObjectName("btnReturnToMode");
+        btnReturnToMode->setGeometry(QRect(660, 260, 56, 18));
+        btnLogout = new QPushButton(page_2);
+        btnLogout->setObjectName("btnLogout");
+        btnLogout->setGeometry(QRect(660, 290, 56, 18));
         stackedWidget->addWidget(page_2);
         page_5 = new QWidget();
         page_5->setObjectName("page_5");
@@ -290,7 +298,7 @@ public:
         retranslateUi(MainWindow);
 
         stackedWidget->setCurrentIndex(3);
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -334,6 +342,8 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "\347\237\245\350\257\206\346\237\245\350\257\242", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "\350\256\255\347\273\203\351\242\230\346\225\260\357\274\232", nullptr));
         btnGenFree->setText(QCoreApplication::translate("MainWindow", "\347\224\237\346\210\220\351\242\230\347\233\256", nullptr));
+        btnReturnToMode->setText(QCoreApplication::translate("MainWindow", "\350\277\224\345\233\236", nullptr));
+        btnLogout->setText(QCoreApplication::translate("MainWindow", "\351\200\200\345\207\272\347\231\273\345\275\225", nullptr));
         btnModeMock->setText(QCoreApplication::translate("MainWindow", "\346\250\241\346\213\237\350\200\203\350\257\225", nullptr));
         btnModeFree->setText(QCoreApplication::translate("MainWindow", "\350\207\252\347\224\261\350\256\255\347\273\203", nullptr));
     } // retranslateUi

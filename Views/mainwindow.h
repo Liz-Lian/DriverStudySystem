@@ -43,6 +43,9 @@ private slots:
     // 考试过程
     void on_btnNext_clicked();
     void on_btnSubmit_clicked();
+    // 【新增】返回和退出
+    void on_btnReturnToMode_clicked();
+    void on_btnLogout_clicked();
     
     // 来自 Controller 的信号槽
     void onTimerUpdated(QString timeStr);

@@ -351,6 +351,42 @@ void MainWindow::on_btnGenFree_clicked()
     }
 }
 
+// ==================== 返回与退出逻辑 ====================
+
+void MainWindow::on_btnReturnToMode_clicked()
+{
+    // 1. 停止考试 (停止计时器)
+    m_examController->stopExam();
+
+    // 2. 清理界面状态 (可选)
+    ui->labelExamQuestion->clear();
+    ui->radioA->setChecked(false);
+    ui->radioB->setChecked(false);
+    ui->radioC->setChecked(false);
+    ui->radioD->setChecked(false);
+    ui->lcdTimer->display("00:00");
+
+    // 3. 跳转回模式选择页 (Page 4)
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+void MainWindow::on_btnLogout_clicked()
+{
+    // 1. 停止考试
+    m_examController->stopExam();
+
+    // 2. 清理用户状态
+    m_currentUserID.clear();
+    ui->inputUserID->clear();
+
+    // 3. 清理界面状态
+    ui->labelExamQuestion->clear();
+    ui->lcdTimer->display("00:00");
+
+    // 4. 跳转回登录页 (Page 0)
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
 // 【新增】倒计时逻辑的具体实现
 void MainWindow::onTimerUpdated(QString timeStr)
 {
