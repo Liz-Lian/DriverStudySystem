@@ -6,6 +6,7 @@
 #include "GlobalTypes.h"
 #include "QuestionManager.h"
 
+// 考试控制器，负责考试流程和计时
 class ExamController : public QObject
 {
     Q_OBJECT
@@ -32,9 +33,11 @@ signals:
     void sigExamFinished();
 
 private slots:
+    // 计时器超时处理
     void onTimerTimeout();
 
 private:
+    // 
     QuestionManager* m_questionManager;
     QTimer* m_timer;
     int m_remainingSeconds;
@@ -42,4 +45,4 @@ private:
     QVector<Question> m_currentQuestions;
 };
 
-#endif // EXAMCONTROLLER_H
+#endif

@@ -6,6 +6,7 @@
 #include <QString>
 #include "GlobalTypes.h"
 
+// 错题回顾控制器
 class ReviewController : public QObject
 {
     Q_OBJECT
@@ -30,4 +31,4 @@ private:
     QVector<QString> m_wrongUserAnswers; // 存储与 m_wrongQuestions 一一对应的用户错选答案
 };
 
-#endif // REVIEWCONTROLLER_H
+#endif 

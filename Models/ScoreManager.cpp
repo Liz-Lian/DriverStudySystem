@@ -5,11 +5,13 @@
 #include <QCoreApplication>
 #include <QDir>
 
+// 构造函数，初始化文件路径
 ScoreManager::ScoreManager() {
     // 自动找到构建目录下的 scores.txt
     m_filename = QCoreApplication::applicationDirPath() + "/scores.txt";
 }
 
+// 保存考试记录到文件
 bool ScoreManager::saveScore(const QString& userID, int score, const QString& mode) {
     QFile file(m_filename);
     if (!file.open(QIODevice::Append | QIODevice::Text)) return false;
@@ -24,7 +26,7 @@ bool ScoreManager::saveScore(const QString& userID, int score, const QString& mo
     return true;
 }
 
-// 2. 修改读取函数 (getAllRecords)
+// 获取所有的详细记录，给表格用
 QList<ExamRecord> ScoreManager::getAllRecords() {
     QList<ExamRecord> records;
     QFile file(m_filename);
@@ -35,13 +37,13 @@ QList<ExamRecord> ScoreManager::getAllRecords() {
         QString line = in.readLine();
         QStringList parts = line.split(" ", Qt::SkipEmptyParts);
 
-        // 【修改】现在我们要判断是否有至少 4 部分（原来的3部分 + 模式）
+        // 获取所有的详细记录，给表格用
         if (parts.size() >= 4) {
             ExamRecord record;
             record.userID = parts[0];
             record.score = parts[1].toInt();
             record.time = parts[2].replace("_", " "); // 把下划线换回空格
-            record.mode = parts[3];                   // 【新增】读取模式
+            record.mode = parts[3];                 
             records.append(record);
         }
     }
@@ -49,6 +51,7 @@ QList<ExamRecord> ScoreManager::getAllRecords() {
     return records;
 }
 
+// 读取所有成绩，计算平均分、最高分，返回统计结果
 ScoreStats ScoreManager::getStats() {
     // 简便写法：复用上面的 getAllRecords
     const QList<ExamRecord> all = getAllRecords();

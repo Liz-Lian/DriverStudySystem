@@ -8,11 +8,20 @@
 #include <random>
 #include <chrono>
 
-
+// 初始化：将题目ID起始值设为1
 QuestionManager::QuestionManager() : m_nextId(1) {
 }
 
+/* loadQuestions (加载/读取)
+    方向：硬盘文件 -> 内存 (m_questions 列表)。
+    场景：程序刚启动时调用，或者管理员点击“刷新列表”时调用。
+    核心逻辑：
+    以只读模式打开文件。
+    清空当前内存里的题目列表 (m_questions.clear())，防止重复。
+    循环读取：每读取 7 行文本，就组装成一个 Question 对象。
+    更新 ID：读取过程中会记录最大的 ID，确保下次新增题目时 ID 不会冲突。*/
 bool QuestionManager::loadQuestions(const QString& filename) {
+    
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Failed to open file for reading:" << filename;
@@ -21,8 +30,7 @@ bool QuestionManager::loadQuestions(const QString& filename) {
 
     m_questions.clear();
     QTextStream in(&file);
-    // 假设文件格式为每7行一道题：ID, Content, A, B, C, D, Answer
-    // 或者使用简单的分隔符格式。这里采用简单的基于行的格式，更易读。
+    // 文件格式为每7行一道题：ID, Content, A, B, C, D, Answer
     // 格式：
     // ID
     // Content
@@ -59,6 +67,13 @@ bool QuestionManager::loadQuestions(const QString& filename) {
     return true;
 }
 
+/*saveQuestions (保存/写入)
+    方向：内存 (m_questions 列表) -> 硬盘文件。
+    场景：管理员添加、修改、删除题目后调用。如果不调用这个，程序关闭后刚才的修改就会丢失。
+    核心逻辑：
+    以只写模式打开文件（这会清空文件原有内容）。
+    循环写入：遍历内存里的每一个 Question 对象。
+    格式化输出：严格按照 7 行的格式（ID、内容、A、B、C、D、答案）把数据写入文件，确保下次 loadQuestions 能读得懂。*/
 bool QuestionManager::saveQuestions(const QString& filename) {
     QFile file(filename);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -81,6 +96,7 @@ bool QuestionManager::saveQuestions(const QString& filename) {
     return true;
 }
 
+// 增添题目
 void QuestionManager::addQuestion(const Question& q) {
     Question newQ = q;
     // 自动分配ID
@@ -88,6 +104,7 @@ void QuestionManager::addQuestion(const Question& q) {
     m_questions.append(newQ);
 }
 
+// 删除题目
 bool QuestionManager::deleteQuestion(int id) {
     for (int i = 0; i < m_questions.size(); ++i) {
         if (m_questions[i].id == id) {
@@ -98,6 +115,7 @@ bool QuestionManager::deleteQuestion(int id) {
     return false;
 }
 
+// 修改更新题目
 bool QuestionManager::updateQuestion(int id, const Question& newQ) {
     for (int i = 0; i < m_questions.size(); ++i) {
         if (m_questions[i].id == id) {
@@ -111,6 +129,7 @@ bool QuestionManager::updateQuestion(int id, const Question& newQ) {
     return false;
 }
 
+// 关键词搜索题目
 QVector<Question> QuestionManager::searchQuestions(const QString& keyword) {
     QVector<Question> result;
     for (const Question& q : m_questions) {
@@ -121,6 +140,7 @@ QVector<Question> QuestionManager::searchQuestions(const QString& keyword) {
     return result;
 }
 
+// 随机抽题
 QVector<Question> QuestionManager::generateExam(int n) {
     // 1. 如果题库是空的，直接返回空列表
     if (m_questions.isEmpty()) {
@@ -130,7 +150,7 @@ QVector<Question> QuestionManager::generateExam(int n) {
     // 2. 复制一份题库，用来打乱（不能打乱原题库 m_questions）
     QVector<Question> examQuestions = m_questions;
 
-    // 3. 【核心修复】使用现代 C++ 标准方式进行随机打乱
+    // 3. 使用现代 C++ 标准方式进行随机打乱
     // 获取当前时间作为随机种子，保证每次运行结果不一样
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     // 使用默认随机引擎
@@ -144,6 +164,7 @@ QVector<Question> QuestionManager::generateExam(int n) {
     return examQuestions;
 }
 
+// 答案核对
 bool QuestionManager::checkAnswer(int questionId, const QString& userAns) {
     for (const Question& q : m_questions) {
         if (q.id == questionId) {
@@ -154,10 +175,12 @@ bool QuestionManager::checkAnswer(int questionId, const QString& userAns) {
     return false;
 }
 
+// 获取所有题目
 const QVector<Question>& QuestionManager::getAllQuestions() const {
     return m_questions;
 }
 
+// 根据ID获取题目
 Question QuestionManager::getQuestionById(int id) {
     for (const Question& q : m_questions) {
         if (q.id == id) {

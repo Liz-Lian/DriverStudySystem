@@ -1,6 +1,7 @@
 #include "ExamController.h"
 #include <QDebug>
 
+// 构造函数
 ExamController::ExamController(QuestionManager* qm, QObject *parent)
     : QObject(parent)
     , m_questionManager(qm)
@@ -11,6 +12,7 @@ ExamController::ExamController(QuestionManager* qm, QObject *parent)
     connect(m_timer, &QTimer::timeout, this, &ExamController::onTimerTimeout);
 }
 
+// 开始考试
 void ExamController::startExam(int count, ExamMode mode)
 {
     m_currentMode = mode;
@@ -32,6 +34,7 @@ void ExamController::startExam(int count, ExamMode mode)
     }
 }
 
+// 停止考试
 void ExamController::stopExam()
 {
     if (m_timer->isActive()) {
@@ -39,16 +42,19 @@ void ExamController::stopExam()
     }
 }
 
+// 获取当前生成的题目
 QVector<Question> ExamController::getExamQuestions() const
 {
     return m_currentQuestions;
 }
 
+// 获取当前模式
 ExamMode ExamController::getCurrentMode() const
 {
     return m_currentMode;
 }
 
+// 计时器超时处理
 void ExamController::onTimerTimeout()
 {
     if (m_remainingSeconds > 0) {

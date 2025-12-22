@@ -8,6 +8,7 @@ ScoreController::ScoreController(ScoreManager* sm, QObject *parent)
 {
 }
 
+// 设置 UI 组件指针
 void ScoreController::setUiComponents(QTableWidget* table, QComboBox* comboUser, QComboBox* comboMode)
 {
     m_tableScores = table;
@@ -15,6 +16,7 @@ void ScoreController::setUiComponents(QTableWidget* table, QComboBox* comboUser,
     m_comboModeFilter = comboMode;
 }
 
+// 刷新表格数据
 void ScoreController::refreshTable()
 {
     if (!m_tableScores) return;
@@ -58,6 +60,7 @@ void ScoreController::refreshTable()
     }
 }
 
+// 多重筛选（用户 + 模式）
 void ScoreController::filterTable()
 {
     if (!m_tableScores || !m_comboFilter || !m_comboModeFilter) return;

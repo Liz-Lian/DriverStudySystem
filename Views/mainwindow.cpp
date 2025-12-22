@@ -21,10 +21,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // 1. 初始化 AdminController
-    m_adminController->setUiComponents(ui->listQuestions, 
-                                       ui->editQuestion, ui->editA, ui->editB, 
-                                       ui->editC, ui->editD, ui->editAnswer,
-                                       ui->inputSearch, ui->textResult);
+    m_adminController->setUiComponents(
+        ui->listQuestions, 
+        ui->editQuestion, ui->editA, ui->editB, 
+        ui->editC, ui->editD, ui->editAnswer,
+        ui->inputSearch, ui->textResult
+    );
 
     // 连接 Admin 信号槽
     connect(ui->btnAdd, &QPushButton::clicked, m_adminController, &AdminController::onAddClicked);
@@ -45,10 +47,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_examController, &ExamController::sigTimerUpdated, this, &MainWindow::onTimerUpdated);
     connect(m_examController, &ExamController::sigExamFinished, this, &MainWindow::onExamFinished);
 
-    // 让程序把当前的工作目录打印出来！
-    qDebug() << "=============================================";
-    qDebug() << "【现在的家】文件都存在这里：" << QDir::currentPath();
-    qDebug() << "=============================================";
 
     // 加载题库
     if (!m_questionManager->loadQuestions("questions.txt")) {
@@ -64,7 +62,6 @@ MainWindow::~MainWindow()
 {
     delete m_questionManager;
     delete m_scoreManager;
-    // Controllers are children of MainWindow, so they will be deleted automatically
     delete ui;
 }
 
@@ -199,7 +196,6 @@ void MainWindow::on_btnSubmit_clicked()
     }
 
     // 计算分数
-    int score = 0;
     int total = m_examQuestions.size();
     int correctCount = 0;
 
@@ -207,17 +203,22 @@ void MainWindow::on_btnSubmit_clicked()
         // 使用 QuestionManager 的 checkAnswer 逻辑，或者直接比对
         // 这里直接比对，因为我们有 Question 对象
         if (m_examQuestions[i].answer.trimmed().toUpper() == m_userAnswers[i].trimmed().toUpper()) {
-            score += 10; // 假设每题10分
             correctCount++;
         }
     }
 
+    // 计算百分制分数
+    int score = 0;
+    if (total > 0) {
+        score = (correctCount * 100) / total;
+    }
+
     // 弹窗显示
-    QString msg = QString("Exam Finished!\nUser: %1\nScore: %2 / %3\nCorrect: %4")
+    QString msg = QString("Exam Finished!\nUser: %1\nScore: %2 / 100\nCorrect: %3 / %4")
                       .arg(m_currentUserID)
                       .arg(score)
-                      .arg(total * 10)
-                      .arg(correctCount);
+                      .arg(correctCount)
+                      .arg(total);
     
     // 准备错题数据
     int wrongCount = m_reviewController->prepareReview(m_examQuestions, m_userAnswers);

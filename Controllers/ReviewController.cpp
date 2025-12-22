@@ -5,6 +5,7 @@ ReviewController::ReviewController(QObject *parent)
 {
 }
 
+// 准备错题数据(返回错题数量)
 int ReviewController::prepareReview(const QVector<Question>& allQuestions, const QVector<QString>& userAnswers)
 {
     m_wrongQuestions.clear();
@@ -28,11 +29,13 @@ int ReviewController::prepareReview(const QVector<Question>& allQuestions, const
     return m_wrongQuestions.size();
 }
 
+// 获取错题列表
 const QVector<Question>& ReviewController::getWrongQuestions() const
 {
     return m_wrongQuestions;
 }
 
+// 获取指定错题索引对应的用户错误答案
 QString ReviewController::getWrongUserAnswer(int index) const
 {
     if (index >= 0 && index < m_wrongUserAnswers.size()) {
@@ -41,6 +44,7 @@ QString ReviewController::getWrongUserAnswer(int index) const
     return QString();
 }
 
+// 获取错题总数
 int ReviewController::getWrongCount() const
 {
     return m_wrongQuestions.size();

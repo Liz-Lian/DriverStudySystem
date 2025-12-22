@@ -8,6 +8,7 @@
 
 class QuestionManager {
 public:
+    // 构造函数
     QuestionManager();
 
     // 用文本文件读写试题库
@@ -35,7 +36,8 @@ public:
     Question getQuestionById(int id);
 
 private:
-    QVector<Question> m_questions;
+    
+    QVector<Question> m_questions; // 题库
     int m_nextId; // 用于生成新题目的ID
 };
 

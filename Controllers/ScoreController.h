@@ -29,4 +29,4 @@ private:
     QComboBox* m_comboModeFilter;
 };
 
-#endif // SCORECONTROLLER_H
+#endif 
