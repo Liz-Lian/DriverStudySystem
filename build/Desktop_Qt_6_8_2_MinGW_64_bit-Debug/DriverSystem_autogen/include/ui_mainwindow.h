@@ -89,6 +89,15 @@ public:
     QWidget *page_5;
     QPushButton *btnModeMock;
     QPushButton *btnModeFree;
+    QWidget *page_6;
+    QPushButton *btnNextWrong;
+    QRadioButton *radioWrongA;
+    QRadioButton *radioWrongD;
+    QRadioButton *radioWrongC;
+    QRadioButton *radioWrongB;
+    QLabel *lblWrongQuestion;
+    QPushButton *btnExitWrong;
+    QLabel *lblCorrectAnswer;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -101,7 +110,7 @@ public:
         centralwidget->setObjectName("centralwidget");
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName("stackedWidget");
-        stackedWidget->setGeometry(QRect(20, 0, 741, 341));
+        stackedWidget->setGeometry(QRect(30, 10, 711, 331));
         page = new QWidget();
         page->setObjectName("page");
         label = new QLabel(page);
@@ -286,6 +295,38 @@ public:
         btnModeFree->setObjectName("btnModeFree");
         btnModeFree->setGeometry(QRect(420, 160, 111, 51));
         stackedWidget->addWidget(page_5);
+        page_6 = new QWidget();
+        page_6->setObjectName("page_6");
+        btnNextWrong = new QPushButton(page_6);
+        btnNextWrong->setObjectName("btnNextWrong");
+        btnNextWrong->setGeometry(QRect(490, 150, 56, 18));
+        radioWrongA = new QRadioButton(page_6);
+        radioWrongA->setObjectName("radioWrongA");
+        radioWrongA->setEnabled(false);
+        radioWrongA->setGeometry(QRect(50, 110, 331, 21));
+        radioWrongD = new QRadioButton(page_6);
+        radioWrongD->setObjectName("radioWrongD");
+        radioWrongD->setEnabled(false);
+        radioWrongD->setGeometry(QRect(50, 220, 341, 31));
+        radioWrongC = new QRadioButton(page_6);
+        radioWrongC->setObjectName("radioWrongC");
+        radioWrongC->setEnabled(false);
+        radioWrongC->setGeometry(QRect(50, 180, 321, 31));
+        radioWrongB = new QRadioButton(page_6);
+        radioWrongB->setObjectName("radioWrongB");
+        radioWrongB->setEnabled(false);
+        radioWrongB->setGeometry(QRect(50, 140, 331, 31));
+        lblWrongQuestion = new QLabel(page_6);
+        lblWrongQuestion->setObjectName("lblWrongQuestion");
+        lblWrongQuestion->setGeometry(QRect(50, 20, 531, 61));
+        btnExitWrong = new QPushButton(page_6);
+        btnExitWrong->setObjectName("btnExitWrong");
+        btnExitWrong->setGeometry(QRect(490, 200, 56, 18));
+        lblCorrectAnswer = new QLabel(page_6);
+        lblCorrectAnswer->setObjectName("lblCorrectAnswer");
+        lblCorrectAnswer->setGeometry(QRect(70, 280, 311, 21));
+        lblCorrectAnswer->setStyleSheet(QString::fromUtf8("color: green; font-weight: bold; font-size: 16px;"));
+        stackedWidget->addWidget(page_6);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -297,7 +338,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(5);
         tabWidget->setCurrentIndex(0);
 
 
@@ -346,6 +387,14 @@ public:
         btnLogout->setText(QCoreApplication::translate("MainWindow", "\351\200\200\345\207\272\347\231\273\345\275\225", nullptr));
         btnModeMock->setText(QCoreApplication::translate("MainWindow", "\346\250\241\346\213\237\350\200\203\350\257\225", nullptr));
         btnModeFree->setText(QCoreApplication::translate("MainWindow", "\350\207\252\347\224\261\350\256\255\347\273\203", nullptr));
+        btnNextWrong->setText(QCoreApplication::translate("MainWindow", "\344\270\213\344\270\200\351\242\230", nullptr));
+        radioWrongA->setText(QCoreApplication::translate("MainWindow", "A", nullptr));
+        radioWrongD->setText(QCoreApplication::translate("MainWindow", "D", nullptr));
+        radioWrongC->setText(QCoreApplication::translate("MainWindow", "C", nullptr));
+        radioWrongB->setText(QCoreApplication::translate("MainWindow", "B", nullptr));
+        lblWrongQuestion->setText(QCoreApplication::translate("MainWindow", "\351\242\230\347\233\256", nullptr));
+        btnExitWrong->setText(QCoreApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
+        lblCorrectAnswer->setText(QCoreApplication::translate("MainWindow", "\346\255\243\347\241\256\347\255\224\346\241\210", nullptr));
     } // retranslateUi
 
 };

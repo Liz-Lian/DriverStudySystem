@@ -14,7 +14,9 @@ MainWindow::MainWindow(QWidget *parent)
     , m_examController(new ExamController(m_questionManager, this))
     , m_adminController(new AdminController(m_questionManager, this))
     , m_scoreController(new ScoreController(m_scoreManager, this))
+    , m_reviewController(new ReviewController(this))
     , m_currentExamIndex(0)
+    , m_currentWrongIndex(0)
 {
     ui->setupUi(this);
 
@@ -217,18 +219,104 @@ void MainWindow::on_btnSubmit_clicked()
                       .arg(total * 10)
                       .arg(correctCount);
     
-    QMessageBox::information(this, "Result", msg);
+    // 准备错题数据
+    int wrongCount = m_reviewController->prepareReview(m_examQuestions, m_userAnswers);
+
+    // 停止考试计时
+    m_examController->stopExam();
 
     // 保存成绩
     QString modeStr = (m_examController->getCurrentMode() == ExamMode::MockExam) ? "模拟考试" : "自由训练";
     m_scoreManager->saveScore(m_currentUserID, score, modeStr);
 
-    // 停止考试计时
-    m_examController->stopExam();
+    // 构造弹窗
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Result");
+    msgBox.setText(msg);
+    
+    QPushButton *btnOK = msgBox.addButton("确定", QMessageBox::AcceptRole);
+    QPushButton *btnReview = nullptr;
+    
+    if (wrongCount > 0) {
+        btnReview = msgBox.addButton("查看错题", QMessageBox::ActionRole);
+    }
 
-    // 返回登录页或重置
-    ui->stackedWidget->setCurrentIndex(0);
-    ui->inputUserID->clear();
+    msgBox.exec();
+
+    if (msgBox.clickedButton() == btnReview) {
+        // 跳转到错题回顾页 (Page 5)
+        ui->stackedWidget->setCurrentIndex(5);
+        m_currentWrongIndex = 0;
+        showWrongQuestion(0);
+    } else {
+        // 返回登录页或重置
+        ui->stackedWidget->setCurrentIndex(0);
+        ui->inputUserID->clear();
+    }
+}
+
+// ==================== 错题回顾逻辑 ====================
+
+void MainWindow::showWrongQuestion(int index)
+{
+    if (index < 0 || index >= m_reviewController->getWrongCount()) return;
+
+    Question q = m_reviewController->getWrongQuestions()[index];
+    QString userAns = m_reviewController->getWrongUserAnswer(index);
+    QString correctAns = q.answer.trimmed().toUpper();
+
+    // 显示题目
+    ui->lblWrongQuestion->setText(QString("错题 %1: %2").arg(index + 1).arg(q.content));
+
+    // 显示选项文本
+    ui->radioWrongA->setText("A. " + q.optionA);
+    ui->radioWrongB->setText("B. " + q.optionB);
+    ui->radioWrongC->setText("C. " + q.optionC);
+    ui->radioWrongD->setText("D. " + q.optionD);
+
+    // 1. 重置样式
+    ui->radioWrongA->setStyleSheet("");
+    ui->radioWrongB->setStyleSheet("");
+    ui->radioWrongC->setStyleSheet("");
+    ui->radioWrongD->setStyleSheet("");
+
+    // 2. 标红（用户错选）
+    if (userAns == "A") ui->radioWrongA->setStyleSheet("color: red; font-weight: bold; font-size: 14px;");
+    else if (userAns == "B") ui->radioWrongB->setStyleSheet("color: red; font-weight: bold; font-size: 14px;");
+    else if (userAns == "C") ui->radioWrongC->setStyleSheet("color: red; font-weight: bold; font-size: 14px;");
+    else if (userAns == "D") ui->radioWrongD->setStyleSheet("color: red; font-weight: bold; font-size: 14px;");
+
+    // 3. 标绿（正确答案）
+    if (correctAns == "A") ui->radioWrongA->setStyleSheet("color: green; font-weight: bold; font-size: 14px;");
+    else if (correctAns == "B") ui->radioWrongB->setStyleSheet("color: green; font-weight: bold; font-size: 14px;");
+    else if (correctAns == "C") ui->radioWrongC->setStyleSheet("color: green; font-weight: bold; font-size: 14px;");
+    else if (correctAns == "D") ui->radioWrongD->setStyleSheet("color: green; font-weight: bold; font-size: 14px;");
+
+    // 4. 底部显示正确答案
+    ui->lblCorrectAnswer->setText("正确答案：" + correctAns);
+
+    // 控制按钮状态
+    if (index == m_reviewController->getWrongCount() - 1) {
+        ui->btnNextWrong->setEnabled(false);
+        ui->btnNextWrong->setText("已是最后一道");
+    } else {
+        ui->btnNextWrong->setEnabled(true);
+        ui->btnNextWrong->setText("下一题");
+    }
+}
+
+void MainWindow::on_btnNextWrong_clicked()
+{
+    m_currentWrongIndex++;
+    if (m_currentWrongIndex < m_reviewController->getWrongCount()) {
+        showWrongQuestion(m_currentWrongIndex);
+    }
+}
+
+void MainWindow::on_btnExitWrong_clicked()
+{
+    // 退出错题回顾，返回模式选择页 (Page 4)
+    ui->stackedWidget->setCurrentIndex(4);
 }
 
 // ========================================================

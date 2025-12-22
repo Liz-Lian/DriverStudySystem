@@ -8,6 +8,7 @@
 #include "ExamController.h"
 #include "AdminController.h"
 #include "ScoreController.h"
+#include "ReviewController.h"
 #include <QDebug>
 #include <QDir>
 
@@ -46,15 +47,18 @@ private slots:
     // 【新增】返回和退出
     void on_btnReturnToMode_clicked();
     void on_btnLogout_clicked();
+
+    // 【新增】错题回顾
+    void on_btnNextWrong_clicked();
+    void on_btnExitWrong_clicked();
     
     // 来自 Controller 的信号槽
     void onTimerUpdated(QString timeStr);
-    void onExamFinished();
 
 private:
+    void showWrongQuestion(int index); // 【新增】显示错题
     void showQuestion(int index);
-    // refreshQuestionList 移到了 AdminController
-    // filterTable 移到了 ScoreController
+    void onExamFinished();
 
     Ui::MainWindow *ui;
     
@@ -64,13 +68,17 @@ private:
     
     // Controllers
     ExamController *m_examController;
-    AdminController *m_adminController; // 新增
-    ScoreController *m_scoreController; // 新增
+    AdminController *m_adminController;
+    ScoreController *m_scoreController;
+    ReviewController *m_reviewController; // 【新增】
 
     // 考试状态
     QVector<Question> m_examQuestions;
     int m_currentExamIndex;
     QVector<QString> m_userAnswers;
+
+    // 错题回顾状态
+    int m_currentWrongIndex;
 
     QString m_currentUserID;
 };

@@ -627,6 +627,8 @@ DriverSystem_autogen/timestamp: \
 	D:/Code/DriverSystem/Controllers/AdminController.h \
 	D:/Code/DriverSystem/Controllers/ExamController.cpp \
 	D:/Code/DriverSystem/Controllers/ExamController.h \
+	D:/Code/DriverSystem/Controllers/ReviewController.cpp \
+	D:/Code/DriverSystem/Controllers/ReviewController.h \
 	D:/Code/DriverSystem/Controllers/ScoreController.cpp \
 	D:/Code/DriverSystem/Controllers/ScoreController.h \
 	D:/Code/DriverSystem/Models/GlobalTypes.h \

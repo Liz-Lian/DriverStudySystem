@@ -312,6 +312,12 @@
 			null
 		],
 		[
+			"D:/Code/DriverSystem/Controllers/ReviewController.h",
+			"MU",
+			"XUX5SSWLF5/moc_ReviewController.cpp",
+			null
+		],
+		[
 			"D:/Code/DriverSystem/Controllers/ScoreController.h",
 			"MU",
 			"XUX5SSWLF5/moc_ScoreController.cpp",
@@ -418,6 +424,7 @@
 	[
 		[ "D:/Code/DriverSystem/Controllers/AdminController.cpp", "MU", null ],
 		[ "D:/Code/DriverSystem/Controllers/ExamController.cpp", "MU", null ],
+		[ "D:/Code/DriverSystem/Controllers/ReviewController.cpp", "MU", null ],
 		[ "D:/Code/DriverSystem/Controllers/ScoreController.cpp", "MU", null ],
 		[ "D:/Code/DriverSystem/Models/QuestionManager.cpp", "MU", null ],
 		[ "D:/Code/DriverSystem/Models/ScoreManager.cpp", "MU", null ],

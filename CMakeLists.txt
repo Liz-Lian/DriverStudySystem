@@ -31,6 +31,8 @@ set(PROJECT_SOURCES
         Controllers/AdminController.h
         Controllers/ScoreController.cpp
         Controllers/ScoreController.h
+        Controllers/ReviewController.cpp
+        Controllers/ReviewController.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
