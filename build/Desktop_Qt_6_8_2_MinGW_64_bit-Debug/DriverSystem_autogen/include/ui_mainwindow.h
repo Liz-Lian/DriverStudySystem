@@ -105,12 +105,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(761, 384);
+        MainWindow->resize(761, 453);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName("stackedWidget");
-        stackedWidget->setGeometry(QRect(30, 10, 711, 331));
+        stackedWidget->setGeometry(QRect(10, 20, 711, 391));
         page = new QWidget();
         page->setObjectName("page");
         label = new QLabel(page);
@@ -130,13 +130,13 @@ public:
         label_2->setFont(font1);
         btnUserLogin = new QPushButton(page);
         btnUserLogin->setObjectName("btnUserLogin");
-        btnUserLogin->setGeometry(QRect(570, 80, 71, 31));
+        btnUserLogin->setGeometry(QRect(570, 80, 121, 31));
         QFont font2;
         font2.setPointSize(15);
         btnUserLogin->setFont(font2);
         label_3 = new QLabel(page);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(50, 190, 151, 31));
+        label_3->setGeometry(QRect(90, 190, 111, 31));
         label_3->setFont(font1);
         inputAdminPwd = new QLineEdit(page);
         inputAdminPwd->setObjectName("inputAdminPwd");
@@ -144,14 +144,15 @@ public:
         inputAdminPwd->setEchoMode(QLineEdit::EchoMode::Password);
         btnAdminLogin = new QPushButton(page);
         btnAdminLogin->setObjectName("btnAdminLogin");
-        btnAdminLogin->setGeometry(QRect(570, 190, 91, 31));
+        btnAdminLogin->setGeometry(QRect(570, 190, 121, 31));
         btnAdminLogin->setFont(font2);
         stackedWidget->addWidget(page);
         page_3 = new QWidget();
         page_3->setObjectName("page_3");
         listQuestions = new QListWidget(page_3);
         listQuestions->setObjectName("listQuestions");
-        listQuestions->setGeometry(QRect(10, 10, 471, 251));
+        listQuestions->setGeometry(QRect(10, 10, 441, 321));
+        listQuestions->setWordWrap(true);
         editQuestion = new QLineEdit(page_3);
         editQuestion->setObjectName("editQuestion");
         editQuestion->setGeometry(QRect(520, 10, 191, 91));
@@ -172,16 +173,16 @@ public:
         editAnswer->setGeometry(QRect(600, 240, 113, 20));
         btnAdd = new QPushButton(page_3);
         btnAdd->setObjectName("btnAdd");
-        btnAdd->setGeometry(QRect(30, 270, 56, 18));
+        btnAdd->setGeometry(QRect(10, 350, 81, 41));
         btnDelete = new QPushButton(page_3);
         btnDelete->setObjectName("btnDelete");
-        btnDelete->setGeometry(QRect(100, 270, 56, 18));
+        btnDelete->setGeometry(QRect(110, 350, 81, 41));
         btnUpdate = new QPushButton(page_3);
         btnUpdate->setObjectName("btnUpdate");
-        btnUpdate->setGeometry(QRect(170, 270, 56, 18));
+        btnUpdate->setGeometry(QRect(210, 350, 81, 41));
         btnStats = new QPushButton(page_3);
         btnStats->setObjectName("btnStats");
-        btnStats->setGeometry(QRect(240, 270, 56, 18));
+        btnStats->setGeometry(QRect(310, 350, 81, 41));
         btnLogoutAdmin = new QPushButton(page_3);
         btnLogoutAdmin->setObjectName("btnLogoutAdmin");
         btnLogoutAdmin->setGeometry(QRect(660, 290, 56, 18));
@@ -224,12 +225,13 @@ public:
         page_2->setObjectName("page_2");
         tabWidget = new QTabWidget(page_2);
         tabWidget->setObjectName("tabWidget");
-        tabWidget->setGeometry(QRect(20, 50, 621, 281));
+        tabWidget->setGeometry(QRect(20, 60, 581, 311));
         tab = new QWidget();
         tab->setObjectName("tab");
         labelExamQuestion = new QLabel(tab);
         labelExamQuestion->setObjectName("labelExamQuestion");
-        labelExamQuestion->setGeometry(QRect(30, 10, 531, 91));
+        labelExamQuestion->setGeometry(QRect(20, 20, 531, 61));
+        labelExamQuestion->setWordWrap(true);
         radioA = new QRadioButton(tab);
         radioA->setObjectName("radioA");
         radioA->setGeometry(QRect(40, 110, 411, 21));
@@ -244,10 +246,10 @@ public:
         radioD->setGeometry(QRect(40, 220, 451, 31));
         btnNext = new QPushButton(tab);
         btnNext->setObjectName("btnNext");
-        btnNext->setGeometry(QRect(530, 190, 56, 18));
+        btnNext->setGeometry(QRect(440, 180, 101, 31));
         btnSubmit = new QPushButton(tab);
         btnSubmit->setObjectName("btnSubmit");
-        btnSubmit->setGeometry(QRect(530, 220, 56, 18));
+        btnSubmit->setGeometry(QRect(440, 220, 101, 31));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName("tab_2");
@@ -263,28 +265,28 @@ public:
         tabWidget->addTab(tab_2, QString());
         frameFreeSetup = new QFrame(page_2);
         frameFreeSetup->setObjectName("frameFreeSetup");
-        frameFreeSetup->setGeometry(QRect(30, 10, 461, 41));
+        frameFreeSetup->setGeometry(QRect(20, -10, 461, 61));
         frameFreeSetup->setFrameShape(QFrame::Shape::StyledPanel);
         frameFreeSetup->setFrameShadow(QFrame::Shadow::Raised);
         label_5 = new QLabel(frameFreeSetup);
         label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(10, 10, 51, 16));
+        label_5->setGeometry(QRect(0, 20, 81, 21));
         inputFreeNum = new QLineEdit(frameFreeSetup);
         inputFreeNum->setObjectName("inputFreeNum");
-        inputFreeNum->setGeometry(QRect(90, 10, 113, 20));
+        inputFreeNum->setGeometry(QRect(90, 10, 111, 41));
         btnGenFree = new QPushButton(frameFreeSetup);
         btnGenFree->setObjectName("btnGenFree");
-        btnGenFree->setGeometry(QRect(230, 10, 56, 18));
+        btnGenFree->setGeometry(QRect(260, 10, 121, 41));
         lcdTimer = new QLCDNumber(page_2);
         lcdTimer->setObjectName("lcdTimer");
-        lcdTimer->setGeometry(QRect(513, 10, 151, 41));
+        lcdTimer->setGeometry(QRect(510, 0, 151, 41));
         lcdTimer->setSegmentStyle(QLCDNumber::SegmentStyle::Flat);
         btnReturnToMode = new QPushButton(page_2);
         btnReturnToMode->setObjectName("btnReturnToMode");
-        btnReturnToMode->setGeometry(QRect(660, 260, 56, 18));
+        btnReturnToMode->setGeometry(QRect(610, 250, 101, 31));
         btnLogout = new QPushButton(page_2);
         btnLogout->setObjectName("btnLogout");
-        btnLogout->setGeometry(QRect(660, 290, 56, 18));
+        btnLogout->setGeometry(QRect(610, 290, 101, 31));
         stackedWidget->addWidget(page_2);
         page_5 = new QWidget();
         page_5->setObjectName("page_5");
@@ -299,7 +301,7 @@ public:
         page_6->setObjectName("page_6");
         btnNextWrong = new QPushButton(page_6);
         btnNextWrong->setObjectName("btnNextWrong");
-        btnNextWrong->setGeometry(QRect(490, 150, 56, 18));
+        btnNextWrong->setGeometry(QRect(420, 130, 131, 41));
         radioWrongA = new QRadioButton(page_6);
         radioWrongA->setObjectName("radioWrongA");
         radioWrongA->setEnabled(false);
@@ -319,9 +321,10 @@ public:
         lblWrongQuestion = new QLabel(page_6);
         lblWrongQuestion->setObjectName("lblWrongQuestion");
         lblWrongQuestion->setGeometry(QRect(50, 20, 531, 61));
+        lblWrongQuestion->setWordWrap(true);
         btnExitWrong = new QPushButton(page_6);
         btnExitWrong->setObjectName("btnExitWrong");
-        btnExitWrong->setGeometry(QRect(490, 200, 56, 18));
+        btnExitWrong->setGeometry(QRect(420, 190, 131, 41));
         lblCorrectAnswer = new QLabel(page_6);
         lblCorrectAnswer->setObjectName("lblCorrectAnswer");
         lblCorrectAnswer->setGeometry(QRect(70, 280, 311, 21));
@@ -338,7 +341,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(5);
+        stackedWidget->setCurrentIndex(1);
         tabWidget->setCurrentIndex(0);
 
 

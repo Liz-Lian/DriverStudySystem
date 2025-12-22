@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>761</width>
-    <height>384</height>
+    <height>453</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,14 +17,14 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>10</y>
+      <x>10</x>
+      <y>20</y>
       <width>711</width>
-      <height>331</height>
+      <height>391</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
@@ -78,7 +78,7 @@
        <rect>
         <x>570</x>
         <y>80</y>
-        <width>71</width>
+        <width>121</width>
         <height>31</height>
        </rect>
       </property>
@@ -94,9 +94,9 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>50</x>
+        <x>90</x>
         <y>190</y>
-        <width>151</width>
+        <width>111</width>
         <height>31</height>
        </rect>
       </property>
@@ -127,7 +127,7 @@
        <rect>
         <x>570</x>
         <y>190</y>
-        <width>91</width>
+        <width>121</width>
         <height>31</height>
        </rect>
       </property>
@@ -147,9 +147,12 @@
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>471</width>
-        <height>251</height>
+        <width>441</width>
+        <height>321</height>
        </rect>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLineEdit" name="editQuestion">
@@ -215,10 +218,10 @@
      <widget class="QPushButton" name="btnAdd">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>270</y>
-        <width>56</width>
-        <height>18</height>
+        <x>10</x>
+        <y>350</y>
+        <width>81</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
@@ -228,10 +231,10 @@
      <widget class="QPushButton" name="btnDelete">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>270</y>
-        <width>56</width>
-        <height>18</height>
+        <x>110</x>
+        <y>350</y>
+        <width>81</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
@@ -241,10 +244,10 @@
      <widget class="QPushButton" name="btnUpdate">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>270</y>
-        <width>56</width>
-        <height>18</height>
+        <x>210</x>
+        <y>350</y>
+        <width>81</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
@@ -254,10 +257,10 @@
      <widget class="QPushButton" name="btnStats">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>270</y>
-        <width>56</width>
-        <height>18</height>
+        <x>310</x>
+        <y>350</y>
+        <width>81</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
@@ -387,9 +390,9 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>50</y>
-        <width>621</width>
-        <height>281</height>
+        <y>60</y>
+        <width>581</width>
+        <height>311</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -402,14 +405,17 @@
        <widget class="QLabel" name="labelExamQuestion">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>10</y>
+          <x>20</x>
+          <y>20</y>
           <width>531</width>
-          <height>91</height>
+          <height>61</height>
          </rect>
         </property>
         <property name="text">
          <string>题目</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
         </property>
        </widget>
        <widget class="QRadioButton" name="radioA">
@@ -467,10 +473,10 @@
        <widget class="QPushButton" name="btnNext">
         <property name="geometry">
          <rect>
-          <x>530</x>
-          <y>190</y>
-          <width>56</width>
-          <height>18</height>
+          <x>440</x>
+          <y>180</y>
+          <width>101</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="text">
@@ -480,10 +486,10 @@
        <widget class="QPushButton" name="btnSubmit">
         <property name="geometry">
          <rect>
-          <x>530</x>
+          <x>440</x>
           <y>220</y>
-          <width>56</width>
-          <height>18</height>
+          <width>101</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="text">
@@ -536,10 +542,10 @@
      <widget class="QFrame" name="frameFreeSetup">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>10</y>
+        <x>20</x>
+        <y>-10</y>
         <width>461</width>
-        <height>41</height>
+        <height>61</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -551,10 +557,10 @@
       <widget class="QLabel" name="label_5">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>51</width>
-         <height>16</height>
+         <x>0</x>
+         <y>20</y>
+         <width>81</width>
+         <height>21</height>
         </rect>
        </property>
        <property name="text">
@@ -566,18 +572,18 @@
         <rect>
          <x>90</x>
          <y>10</y>
-         <width>113</width>
-         <height>20</height>
+         <width>111</width>
+         <height>41</height>
         </rect>
        </property>
       </widget>
       <widget class="QPushButton" name="btnGenFree">
        <property name="geometry">
         <rect>
-         <x>230</x>
+         <x>260</x>
          <y>10</y>
-         <width>56</width>
-         <height>18</height>
+         <width>121</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="text">
@@ -588,8 +594,8 @@
      <widget class="QLCDNumber" name="lcdTimer">
       <property name="geometry">
        <rect>
-        <x>513</x>
-        <y>10</y>
+        <x>510</x>
+        <y>0</y>
         <width>151</width>
         <height>41</height>
        </rect>
@@ -601,10 +607,10 @@
      <widget class="QPushButton" name="btnReturnToMode">
       <property name="geometry">
        <rect>
-        <x>660</x>
-        <y>260</y>
-        <width>56</width>
-        <height>18</height>
+        <x>610</x>
+        <y>250</y>
+        <width>101</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
@@ -614,10 +620,10 @@
      <widget class="QPushButton" name="btnLogout">
       <property name="geometry">
        <rect>
-        <x>660</x>
+        <x>610</x>
         <y>290</y>
-        <width>56</width>
-        <height>18</height>
+        <width>101</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
@@ -657,10 +663,10 @@
      <widget class="QPushButton" name="btnNextWrong">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>150</y>
-        <width>56</width>
-        <height>18</height>
+        <x>420</x>
+        <y>130</y>
+        <width>131</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
@@ -743,14 +749,17 @@
       <property name="text">
        <string>题目</string>
       </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QPushButton" name="btnExitWrong">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>200</y>
-        <width>56</width>
-        <height>18</height>
+        <x>420</x>
+        <y>190</y>
+        <width>131</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
