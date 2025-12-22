@@ -1,0 +1,4 @@
+user1 90
+user2 85
+user1 95
+test_user 60

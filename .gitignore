@@ -1,0 +1,18 @@
+# Qt Creator 产生的垃圾
+build-*/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+Makefile*
+
+# Qt Creator 个人配置 (不要传！)
+*.user
+*.user.*
+
+# 临时文件
+debug/
+release/
+.qmake.stash
