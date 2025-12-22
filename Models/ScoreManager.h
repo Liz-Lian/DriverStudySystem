@@ -4,14 +4,7 @@
 #include <QString>
 #include <QList>
 #include <QDateTime>
-
-// 定义一个结构体，用来存每一条“成绩单”
-struct ExamRecord {
-    QString userID;
-    int score;
-    QString time; // 新增：考试时间
-    QString mode; // 【新增】考试模式
-};
+#include "GlobalTypes.h"
 
 struct ScoreStats {
     int totalExams;

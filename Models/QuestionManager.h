@@ -4,16 +4,7 @@
 #include <QString>
 #include <QVector>
 #include <QList>
-
-struct Question {
-    int id;
-    QString content;
-    QString optionA;
-    QString optionB;
-    QString optionC;
-    QString optionD;
-    QString answer; // A, B, C, or D
-};
+#include "GlobalTypes.h"
 
 class QuestionManager {
 public:

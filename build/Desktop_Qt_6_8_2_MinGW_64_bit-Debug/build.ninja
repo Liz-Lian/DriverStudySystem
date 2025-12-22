@@ -53,7 +53,7 @@ build CMakeFiles/DriverSystem.dir/DriverSystem_autogen/mocs_compilation.cpp.obj:
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\DriverSystem.dir\DriverSystem_autogen\mocs_compilation.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -ID:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include -isystem C:/Qt/6.8.2/mingw_64/include/QtCore -isystem C:/Qt/6.8.2/mingw_64/include -isystem C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.2/mingw_64/include/QtGui
+  INCLUDES = -ID:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include -ID:/Code/DriverSystem/Models -ID:/Code/DriverSystem/Controllers -ID:/Code/DriverSystem/Views -isystem C:/Qt/6.8.2/mingw_64/include/QtCore -isystem C:/Qt/6.8.2/mingw_64/include -isystem C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.2/mingw_64/include/QtGui
   OBJECT_DIR = CMakeFiles\DriverSystem.dir
   OBJECT_FILE_DIR = CMakeFiles\DriverSystem.dir\DriverSystem_autogen
 
@@ -61,33 +61,57 @@ build CMakeFiles/DriverSystem.dir/main.cpp.obj: CXX_COMPILER__DriverSystem_unsca
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\DriverSystem.dir\main.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -ID:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include -isystem C:/Qt/6.8.2/mingw_64/include/QtCore -isystem C:/Qt/6.8.2/mingw_64/include -isystem C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.2/mingw_64/include/QtGui
+  INCLUDES = -ID:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include -ID:/Code/DriverSystem/Models -ID:/Code/DriverSystem/Controllers -ID:/Code/DriverSystem/Views -isystem C:/Qt/6.8.2/mingw_64/include/QtCore -isystem C:/Qt/6.8.2/mingw_64/include -isystem C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.2/mingw_64/include/QtGui
   OBJECT_DIR = CMakeFiles\DriverSystem.dir
   OBJECT_FILE_DIR = CMakeFiles\DriverSystem.dir
 
-build CMakeFiles/DriverSystem.dir/mainwindow.cpp.obj: CXX_COMPILER__DriverSystem_unscanned_Debug D$:/Code/DriverSystem/mainwindow.cpp || cmake_object_order_depends_target_DriverSystem
+build CMakeFiles/DriverSystem.dir/Views/mainwindow.cpp.obj: CXX_COMPILER__DriverSystem_unscanned_Debug D$:/Code/DriverSystem/Views/mainwindow.cpp || cmake_object_order_depends_target_DriverSystem
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\DriverSystem.dir\mainwindow.cpp.obj.d
+  DEP_FILE = CMakeFiles\DriverSystem.dir\Views\mainwindow.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -ID:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include -isystem C:/Qt/6.8.2/mingw_64/include/QtCore -isystem C:/Qt/6.8.2/mingw_64/include -isystem C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.2/mingw_64/include/QtGui
+  INCLUDES = -ID:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include -ID:/Code/DriverSystem/Models -ID:/Code/DriverSystem/Controllers -ID:/Code/DriverSystem/Views -isystem C:/Qt/6.8.2/mingw_64/include/QtCore -isystem C:/Qt/6.8.2/mingw_64/include -isystem C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.2/mingw_64/include/QtGui
   OBJECT_DIR = CMakeFiles\DriverSystem.dir
-  OBJECT_FILE_DIR = CMakeFiles\DriverSystem.dir
+  OBJECT_FILE_DIR = CMakeFiles\DriverSystem.dir\Views
 
-build CMakeFiles/DriverSystem.dir/QuestionManager.cpp.obj: CXX_COMPILER__DriverSystem_unscanned_Debug D$:/Code/DriverSystem/QuestionManager.cpp || cmake_object_order_depends_target_DriverSystem
+build CMakeFiles/DriverSystem.dir/Models/QuestionManager.cpp.obj: CXX_COMPILER__DriverSystem_unscanned_Debug D$:/Code/DriverSystem/Models/QuestionManager.cpp || cmake_object_order_depends_target_DriverSystem
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\DriverSystem.dir\QuestionManager.cpp.obj.d
+  DEP_FILE = CMakeFiles\DriverSystem.dir\Models\QuestionManager.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -ID:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include -isystem C:/Qt/6.8.2/mingw_64/include/QtCore -isystem C:/Qt/6.8.2/mingw_64/include -isystem C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.2/mingw_64/include/QtGui
+  INCLUDES = -ID:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include -ID:/Code/DriverSystem/Models -ID:/Code/DriverSystem/Controllers -ID:/Code/DriverSystem/Views -isystem C:/Qt/6.8.2/mingw_64/include/QtCore -isystem C:/Qt/6.8.2/mingw_64/include -isystem C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.2/mingw_64/include/QtGui
   OBJECT_DIR = CMakeFiles\DriverSystem.dir
-  OBJECT_FILE_DIR = CMakeFiles\DriverSystem.dir
+  OBJECT_FILE_DIR = CMakeFiles\DriverSystem.dir\Models
 
-build CMakeFiles/DriverSystem.dir/ScoreManager.cpp.obj: CXX_COMPILER__DriverSystem_unscanned_Debug D$:/Code/DriverSystem/ScoreManager.cpp || cmake_object_order_depends_target_DriverSystem
+build CMakeFiles/DriverSystem.dir/Models/ScoreManager.cpp.obj: CXX_COMPILER__DriverSystem_unscanned_Debug D$:/Code/DriverSystem/Models/ScoreManager.cpp || cmake_object_order_depends_target_DriverSystem
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\DriverSystem.dir\ScoreManager.cpp.obj.d
+  DEP_FILE = CMakeFiles\DriverSystem.dir\Models\ScoreManager.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -ID:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include -isystem C:/Qt/6.8.2/mingw_64/include/QtCore -isystem C:/Qt/6.8.2/mingw_64/include -isystem C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.2/mingw_64/include/QtGui
+  INCLUDES = -ID:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include -ID:/Code/DriverSystem/Models -ID:/Code/DriverSystem/Controllers -ID:/Code/DriverSystem/Views -isystem C:/Qt/6.8.2/mingw_64/include/QtCore -isystem C:/Qt/6.8.2/mingw_64/include -isystem C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.2/mingw_64/include/QtGui
   OBJECT_DIR = CMakeFiles\DriverSystem.dir
-  OBJECT_FILE_DIR = CMakeFiles\DriverSystem.dir
+  OBJECT_FILE_DIR = CMakeFiles\DriverSystem.dir\Models
+
+build CMakeFiles/DriverSystem.dir/Controllers/ExamController.cpp.obj: CXX_COMPILER__DriverSystem_unscanned_Debug D$:/Code/DriverSystem/Controllers/ExamController.cpp || cmake_object_order_depends_target_DriverSystem
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\DriverSystem.dir\Controllers\ExamController.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include -ID:/Code/DriverSystem/Models -ID:/Code/DriverSystem/Controllers -ID:/Code/DriverSystem/Views -isystem C:/Qt/6.8.2/mingw_64/include/QtCore -isystem C:/Qt/6.8.2/mingw_64/include -isystem C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\DriverSystem.dir
+  OBJECT_FILE_DIR = CMakeFiles\DriverSystem.dir\Controllers
+
+build CMakeFiles/DriverSystem.dir/Controllers/AdminController.cpp.obj: CXX_COMPILER__DriverSystem_unscanned_Debug D$:/Code/DriverSystem/Controllers/AdminController.cpp || cmake_object_order_depends_target_DriverSystem
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\DriverSystem.dir\Controllers\AdminController.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include -ID:/Code/DriverSystem/Models -ID:/Code/DriverSystem/Controllers -ID:/Code/DriverSystem/Views -isystem C:/Qt/6.8.2/mingw_64/include/QtCore -isystem C:/Qt/6.8.2/mingw_64/include -isystem C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\DriverSystem.dir
+  OBJECT_FILE_DIR = CMakeFiles\DriverSystem.dir\Controllers
+
+build CMakeFiles/DriverSystem.dir/Controllers/ScoreController.cpp.obj: CXX_COMPILER__DriverSystem_unscanned_Debug D$:/Code/DriverSystem/Controllers/ScoreController.cpp || cmake_object_order_depends_target_DriverSystem
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\DriverSystem.dir\Controllers\ScoreController.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include -ID:/Code/DriverSystem/Models -ID:/Code/DriverSystem/Controllers -ID:/Code/DriverSystem/Views -isystem C:/Qt/6.8.2/mingw_64/include/QtCore -isystem C:/Qt/6.8.2/mingw_64/include -isystem C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\DriverSystem.dir
+  OBJECT_FILE_DIR = CMakeFiles\DriverSystem.dir\Controllers
 
 
 # =============================================================================
@@ -97,7 +121,7 @@ build CMakeFiles/DriverSystem.dir/ScoreManager.cpp.obj: CXX_COMPILER__DriverSyst
 #############################################
 # Link the executable DriverSystem.exe
 
-build DriverSystem.exe: CXX_EXECUTABLE_LINKER__DriverSystem_Debug CMakeFiles/DriverSystem.dir/DriverSystem_autogen/mocs_compilation.cpp.obj CMakeFiles/DriverSystem.dir/main.cpp.obj CMakeFiles/DriverSystem.dir/mainwindow.cpp.obj CMakeFiles/DriverSystem.dir/QuestionManager.cpp.obj CMakeFiles/DriverSystem.dir/ScoreManager.cpp.obj | C$:/Qt/6.8.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.8.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.8.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.8.2/mingw_64/lib/libQt6EntryPoint.a || DriverSystem_autogen DriverSystem_autogen_timestamp_deps
+build DriverSystem.exe: CXX_EXECUTABLE_LINKER__DriverSystem_Debug CMakeFiles/DriverSystem.dir/DriverSystem_autogen/mocs_compilation.cpp.obj CMakeFiles/DriverSystem.dir/main.cpp.obj CMakeFiles/DriverSystem.dir/Views/mainwindow.cpp.obj CMakeFiles/DriverSystem.dir/Models/QuestionManager.cpp.obj CMakeFiles/DriverSystem.dir/Models/ScoreManager.cpp.obj CMakeFiles/DriverSystem.dir/Controllers/ExamController.cpp.obj CMakeFiles/DriverSystem.dir/Controllers/AdminController.cpp.obj CMakeFiles/DriverSystem.dir/Controllers/ScoreController.cpp.obj | C$:/Qt/6.8.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.8.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.8.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.8.2/mingw_64/lib/libQt6EntryPoint.a || DriverSystem_autogen DriverSystem_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.8.2/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.8.2/mingw_64/lib/libQt6Gui.a  C:/Qt/6.8.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.8.2/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -184,7 +208,7 @@ build DriverSystem_autogen_timestamp_deps: phony
 #############################################
 # Utility command for DriverSystem_autogen
 
-build DriverSystem_autogen: phony CMakeFiles/DriverSystem_autogen DriverSystem_autogen/include/ui_mainwindow.h DriverSystem_autogen/timestamp DriverSystem_autogen/mocs_compilation.cpp DriverSystem_autogen_timestamp_deps
+build DriverSystem_autogen: phony CMakeFiles/DriverSystem_autogen DriverSystem_autogen/include/Views/ui_mainwindow.h DriverSystem_autogen/timestamp DriverSystem_autogen/mocs_compilation.cpp DriverSystem_autogen_timestamp_deps
 
 
 #############################################
@@ -201,7 +225,7 @@ build DriverSystem_autogen/timestamp DriverSystem_autogen/mocs_compilation.cpp |
 #############################################
 # Phony custom command for CMakeFiles\DriverSystem_autogen
 
-build CMakeFiles/DriverSystem_autogen DriverSystem_autogen/include/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/DriverSystem_autogen ${cmake_ninja_workdir}DriverSystem_autogen/include/ui_mainwindow.h: phony DriverSystem_autogen/timestamp || DriverSystem_autogen_timestamp_deps
+build CMakeFiles/DriverSystem_autogen DriverSystem_autogen/include/Views/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/DriverSystem_autogen ${cmake_ninja_workdir}DriverSystem_autogen/include/Views/ui_mainwindow.h: phony DriverSystem_autogen/timestamp || DriverSystem_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

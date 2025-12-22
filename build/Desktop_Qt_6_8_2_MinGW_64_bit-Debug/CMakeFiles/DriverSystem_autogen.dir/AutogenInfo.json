@@ -300,21 +300,45 @@
 	"HEADERS" : 
 	[
 		[
-			"D:/Code/DriverSystem/QuestionManager.h",
+			"D:/Code/DriverSystem/Controllers/AdminController.h",
 			"MU",
-			"EWIEGA46WW/moc_QuestionManager.cpp",
+			"XUX5SSWLF5/moc_AdminController.cpp",
 			null
 		],
 		[
-			"D:/Code/DriverSystem/ScoreManager.h",
+			"D:/Code/DriverSystem/Controllers/ExamController.h",
 			"MU",
-			"EWIEGA46WW/moc_ScoreManager.cpp",
+			"XUX5SSWLF5/moc_ExamController.cpp",
 			null
 		],
 		[
-			"D:/Code/DriverSystem/mainwindow.h",
+			"D:/Code/DriverSystem/Controllers/ScoreController.h",
 			"MU",
-			"EWIEGA46WW/moc_mainwindow.cpp",
+			"XUX5SSWLF5/moc_ScoreController.cpp",
+			null
+		],
+		[
+			"D:/Code/DriverSystem/Models/GlobalTypes.h",
+			"MU",
+			"25IR5XJDBU/moc_GlobalTypes.cpp",
+			null
+		],
+		[
+			"D:/Code/DriverSystem/Models/QuestionManager.h",
+			"MU",
+			"25IR5XJDBU/moc_QuestionManager.cpp",
+			null
+		],
+		[
+			"D:/Code/DriverSystem/Models/ScoreManager.h",
+			"MU",
+			"25IR5XJDBU/moc_ScoreManager.cpp",
+			null
+		],
+		[
+			"D:/Code/DriverSystem/Views/mainwindow.h",
+			"MU",
+			"UN6PRT6GRQ/moc_mainwindow.cpp",
 			null
 		]
 	],
@@ -344,6 +368,9 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"D:/Code/DriverSystem/Models",
+		"D:/Code/DriverSystem/Controllers",
+		"D:/Code/DriverSystem/Views",
 		"C:/Qt/6.8.2/mingw_64/include/QtCore",
 		"C:/Qt/6.8.2/mingw_64/include",
 		"C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++",
@@ -389,10 +416,13 @@
 	"SETTINGS_FILE" : "D:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/CMakeFiles/DriverSystem_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "D:/Code/DriverSystem/QuestionManager.cpp", "MU", null ],
-		[ "D:/Code/DriverSystem/ScoreManager.cpp", "MU", null ],
-		[ "D:/Code/DriverSystem/main.cpp", "MU", null ],
-		[ "D:/Code/DriverSystem/mainwindow.cpp", "MU", null ]
+		[ "D:/Code/DriverSystem/Controllers/AdminController.cpp", "MU", null ],
+		[ "D:/Code/DriverSystem/Controllers/ExamController.cpp", "MU", null ],
+		[ "D:/Code/DriverSystem/Controllers/ScoreController.cpp", "MU", null ],
+		[ "D:/Code/DriverSystem/Models/QuestionManager.cpp", "MU", null ],
+		[ "D:/Code/DriverSystem/Models/ScoreManager.cpp", "MU", null ],
+		[ "D:/Code/DriverSystem/Views/mainwindow.cpp", "MU", null ],
+		[ "D:/Code/DriverSystem/main.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

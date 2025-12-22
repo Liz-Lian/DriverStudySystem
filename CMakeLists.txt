@@ -12,15 +12,25 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
+# 包含头文件路径，这样代码里的 #include "xxx.h" 就不需要改
+include_directories(Models Controllers Views)
+
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-        QuestionManager.cpp   # 在这里加
-        QuestionManager.h     # 在这里加
-        ScoreManager.cpp      # 在这里加
-        ScoreManager.h        # 在这里加
+        Views/mainwindow.cpp
+        Views/mainwindow.h
+        Views/mainwindow.ui
+        Models/QuestionManager.cpp
+        Models/QuestionManager.h
+        Models/ScoreManager.cpp
+        Models/ScoreManager.h
+        Models/GlobalTypes.h
+        Controllers/ExamController.cpp
+        Controllers/ExamController.h
+        Controllers/AdminController.cpp
+        Controllers/AdminController.h
+        Controllers/ScoreController.cpp
+        Controllers/ScoreController.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

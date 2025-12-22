@@ -23,7 +23,8 @@
 			"include",
 			"find_package",
 			"find_dependency",
-			"_qt_internal_find_qt_dependencies"
+			"_qt_internal_find_qt_dependencies",
+			"include_directories"
 		],
 		"files" : 
 		[
@@ -51,7 +52,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 27,
+				"line" : 33,
 				"parent" : 0
 			},
 			{
@@ -75,13 +76,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 66,
+				"line" : 72,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 49,
+				"line" : 55,
 				"parent" : 0
 			},
 			{
@@ -259,6 +260,12 @@
 				"file" : 13,
 				"line" : 61,
 				"parent" : 38
+			},
+			{
+				"command" : 11,
+				"file" : 1,
+				"line" : 16,
+				"parent" : 0
 			}
 		]
 	},
@@ -325,6 +332,18 @@
 					"path" : "D:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include"
 				},
 				{
+					"backtrace" : 40,
+					"path" : "D:/Code/DriverSystem/Models"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "D:/Code/DriverSystem/Controllers"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "D:/Code/DriverSystem/Views"
+				},
+				{
 					"backtrace" : 14,
 					"isSystem" : true,
 					"path" : "C:/Qt/6.8.2/mingw_64/include/QtCore"
@@ -366,7 +385,8 @@
 				1,
 				2,
 				5,
-				7
+				7,
+				10
 			]
 		}
 	],
@@ -491,7 +511,8 @@
 				1,
 				2,
 				5,
-				7
+				7,
+				10
 			]
 		},
 		{
@@ -501,7 +522,9 @@
 				3,
 				6,
 				8,
-				9
+				9,
+				11,
+				12
 			]
 		},
 		{
@@ -515,14 +538,14 @@
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				10
+				13
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				11
+				14
 			]
 		}
 	],
@@ -544,45 +567,61 @@
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "mainwindow.cpp",
+			"path" : "Views/mainwindow.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
-			"path" : "mainwindow.h",
+			"path" : "Views/mainwindow.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
-			"path" : "mainwindow.ui",
+			"path" : "Views/mainwindow.ui",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "QuestionManager.cpp",
+			"path" : "Models/QuestionManager.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
-			"path" : "QuestionManager.h",
+			"path" : "Models/QuestionManager.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "ScoreManager.cpp",
+			"path" : "Models/ScoreManager.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
-			"path" : "ScoreManager.h",
+			"path" : "Models/ScoreManager.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "Models/GlobalTypes.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "Controllers/ExamController.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "Controllers/ExamController.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include/ui_mainwindow.h",
+			"path" : "build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/include/Views/ui_mainwindow.h",
 			"sourceGroupIndex" : 1
 		},
 		{
