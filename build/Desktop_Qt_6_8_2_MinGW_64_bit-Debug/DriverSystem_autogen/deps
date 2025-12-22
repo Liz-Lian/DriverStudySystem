@@ -636,6 +636,8 @@ DriverSystem_autogen/timestamp: \
 	D:/Code/DriverSystem/Models/QuestionManager.h \
 	D:/Code/DriverSystem/Models/ScoreManager.cpp \
 	D:/Code/DriverSystem/Models/ScoreManager.h \
+	D:/Code/DriverSystem/Views/MainWindow_Exam.cpp \
+	D:/Code/DriverSystem/Views/MainWindow_Review.cpp \
 	D:/Code/DriverSystem/Views/mainwindow.cpp \
 	D:/Code/DriverSystem/Views/mainwindow.h \
 	D:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \

@@ -1570,6 +1570,8 @@ D:/Code/DriverSystem/Controllers/ScoreController.h
  mdp:D:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/moc_predefs.h
 D:/Code/DriverSystem/Controllers/AdminController.cpp
 D:/Code/DriverSystem/Controllers/ScoreController.cpp
+D:/Code/DriverSystem/Views/MainWindow_Exam.cpp
+ uic:ui_mainwindow.h
 D:/Code/DriverSystem/Controllers/ReviewController.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.8.2/mingw_64/include/QtCore/QObject
@@ -1882,4 +1884,6 @@ D:/Code/DriverSystem/Controllers/ReviewController.h
  mdp:D:/Code/DriverSystem/Controllers/ReviewController.h
  mdp:D:/Code/DriverSystem/Models/GlobalTypes.h
  mdp:D:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/moc_predefs.h
+D:/Code/DriverSystem/Views/MainWindow_Review.cpp
+ uic:ui_mainwindow.h
 D:/Code/DriverSystem/Controllers/ReviewController.cpp

@@ -428,6 +428,8 @@
 		[ "D:/Code/DriverSystem/Controllers/ScoreController.cpp", "MU", null ],
 		[ "D:/Code/DriverSystem/Models/QuestionManager.cpp", "MU", null ],
 		[ "D:/Code/DriverSystem/Models/ScoreManager.cpp", "MU", null ],
+		[ "D:/Code/DriverSystem/Views/MainWindow_Exam.cpp", "MU", null ],
+		[ "D:/Code/DriverSystem/Views/MainWindow_Review.cpp", "MU", null ],
 		[ "D:/Code/DriverSystem/Views/mainwindow.cpp", "MU", null ],
 		[ "D:/Code/DriverSystem/main.cpp", "MU", null ]
 	],

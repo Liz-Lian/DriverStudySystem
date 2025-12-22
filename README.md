@@ -53,11 +53,18 @@
 负责用户界面的展示和交互。
 
 - **`Views/mainwindow.ui`**: Qt Designer 设计的 UI 文件 (XML 格式)。定义了 `QStackedWidget` 多页面布局，包括登录页、菜单页、考试页、管理页、成绩页和错题回顾页。
-- **`Views/mainwindow.h` / `.cpp`**: 主窗口类。
-  - 初始化 UI 和各个 Controller/Manager。
-  - 处理 UI 事件（按钮点击、页面跳转）。
-  - 作为各个模块的协调者，将用户操作转发给对应的 Controller 处理，并更新 UI 显示。
-  - 包含具体的 UI 渲染逻辑，如根据答案正确与否将选项标红或标绿 (`showWrongQuestion`)。
+- **`Views/mainwindow.h`**: 主窗口类的头文件，定义了所有成员变量和槽函数。
+- **`Views/mainwindow.cpp`**: 主窗口核心逻辑。
+  - 负责初始化 UI 和各个 Controller/Manager。
+  - 处理登录、页面跳转、管理员和成绩管理的基础交互。
+- **`Views/MainWindow_Exam.cpp`**: 考试相关 UI 逻辑。
+  - 处理模拟考试和自由训练的模式选择。
+  - 负责题目显示 (`showQuestion`)、下一题切换、交卷评分逻辑。
+  - 处理倒计时更新。
+- **`Views/MainWindow_Review.cpp`**: 错题回顾 UI 逻辑。
+  - 负责错题的展示 (`showWrongQuestion`)。
+  - 实现视觉反馈：将用户错选标红，正确答案标绿。
+  - 处理错题回顾的导航（下一题、退出）。
 
 ## 功能概览
 

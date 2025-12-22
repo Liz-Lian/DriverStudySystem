@@ -18,6 +18,8 @@ include_directories(Models Controllers Views)
 set(PROJECT_SOURCES
         main.cpp
         Views/mainwindow.cpp
+        Views/MainWindow_Exam.cpp
+        Views/MainWindow_Review.cpp
         Views/mainwindow.h
         Views/mainwindow.ui
         Models/QuestionManager.cpp
