@@ -182,6 +182,7 @@ D:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_auto
   C:/Qt/6.8.2/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.8.2/mingw_64/include/QtWidgets/QTableWidget \
   C:/Qt/6.8.2/mingw_64/include/QtWidgets/QTextBrowser \
+  C:/Qt/6.8.2/mingw_64/include/QtWidgets/QTextEdit \
   C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemview.h \
   C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \

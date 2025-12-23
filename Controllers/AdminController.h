@@ -5,6 +5,7 @@
 #include <QListWidget>
 #include <QLineEdit>
 #include <QTextBrowser>
+#include <QTextEdit>
 #include "QuestionManager.h"
 
 class AdminController : public QObject
@@ -15,7 +16,7 @@ public:
 
     // 设置需要操作的 UI 控件
     void setUiComponents(QListWidget* list, 
-                         QLineEdit* inputQ, QLineEdit* inputA, QLineEdit* inputB, 
+                         QTextEdit* inputQ, QLineEdit* inputA, QLineEdit* inputB, 
                          QLineEdit* inputC, QLineEdit* inputD, QLineEdit* inputAns,
                          QLineEdit* inputSearch, QTextBrowser* textResult);
 
@@ -34,7 +35,7 @@ private:
     
     // UI 指针
     QListWidget* m_listQuestions;
-    QLineEdit* m_editQuestion;
+    QTextEdit* m_editQuestion;
     QLineEdit* m_editA;
     QLineEdit* m_editB;
     QLineEdit* m_editC;

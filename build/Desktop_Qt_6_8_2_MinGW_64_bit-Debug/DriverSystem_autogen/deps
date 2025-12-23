@@ -181,6 +181,7 @@ DriverSystem_autogen/timestamp: \
 	C:/Qt/6.8.2/mingw_64/include/QtWidgets/QMainWindow \
 	C:/Qt/6.8.2/mingw_64/include/QtWidgets/QTableWidget \
 	C:/Qt/6.8.2/mingw_64/include/QtWidgets/QTextBrowser \
+	C:/Qt/6.8.2/mingw_64/include/QtWidgets/QTextEdit \
 	C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 	C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemview.h \
 	C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -646,5 +647,6 @@ DriverSystem_autogen/timestamp: \
 	D:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
 	D:/Code/DriverSystem/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/DriverSystem_autogen/moc_predefs.h \
 	D:/Code/DriverSystem/main.cpp \
+	D:/Code/DriverSystem/resources.qrc \
 	D:/Code/DriverSystem/Views/mainwindow.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

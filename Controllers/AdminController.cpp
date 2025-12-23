@@ -10,7 +10,7 @@ AdminController::AdminController(QuestionManager* qm, QObject *parent)
 }
 
 void AdminController::setUiComponents(QListWidget* list, 
-                                      QLineEdit* inputQ, QLineEdit* inputA, QLineEdit* inputB, 
+                                      QTextEdit* inputQ, QLineEdit* inputA, QLineEdit* inputB, 
                                       QLineEdit* inputC, QLineEdit* inputD, QLineEdit* inputAns,
                                       QLineEdit* inputSearch, QTextBrowser* textResult)
 {
@@ -23,6 +23,15 @@ void AdminController::setUiComponents(QListWidget* list,
     m_editAnswer = inputAns;
     m_inputSearch = inputSearch;
     m_textResult = textResult;
+
+    // 设置 Placeholder (占位符提示文本)
+    if (m_editQuestion) m_editQuestion->setPlaceholderText("请输入题目内容...");
+    if (m_editA) m_editA->setPlaceholderText("请输入选项 A...");
+    if (m_editB) m_editB->setPlaceholderText("请输入选项 B...");
+    if (m_editC) m_editC->setPlaceholderText("请输入选项 C...");
+    if (m_editD) m_editD->setPlaceholderText("请输入选项 D...");
+    if (m_editAnswer) m_editAnswer->setPlaceholderText("请输入正确答案 (如 A)...");
+    if (m_inputSearch) m_inputSearch->setPlaceholderText("请输入关键词搜索...");
 }
 
 void AdminController::refreshQuestionList()
@@ -60,7 +69,7 @@ void AdminController::onListRowChanged(int currentRow)
 void AdminController::onAddClicked()
 {
     Question q;
-    q.content = m_editQuestion->text();
+    q.content = m_editQuestion->toPlainText();
     q.optionA = m_editA->text();
     q.optionB = m_editB->text();
     q.optionC = m_editC->text();
@@ -76,6 +85,14 @@ void AdminController::onAddClicked()
     m_questionManager->saveQuestions("questions.txt");
     refreshQuestionList();
     QMessageBox::information(nullptr, "Info", "Question added.");
+
+    // 添加完成后清空输入框，方便添加下一题
+    m_editQuestion->clear();
+    m_editA->clear();
+    m_editB->clear();
+    m_editC->clear();
+    m_editD->clear();
+    m_editAnswer->clear();
 }
 
 void AdminController::onDeleteClicked()
@@ -116,7 +133,7 @@ void AdminController::onUpdateClicked()
     
     Question q;
     q.id = id;
-    q.content = m_editQuestion->text();
+    q.content = m_editQuestion->toPlainText();
     q.optionA = m_editA->text();
     q.optionB = m_editB->text();
     q.optionC = m_editC->text();

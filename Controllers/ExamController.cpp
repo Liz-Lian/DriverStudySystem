@@ -13,7 +13,7 @@ ExamController::ExamController(QuestionManager* qm, QObject *parent)
 }
 
 // 开始考试
-void ExamController::startExam(int count, ExamMode mode)
+void ExamController::startExam(int count, ExamMode mode, int time)
 {
     m_currentMode = mode;
     
@@ -22,7 +22,7 @@ void ExamController::startExam(int count, ExamMode mode)
 
     // 如果是模拟考试，启动倒计时 (例如45分钟 = 2700秒)
     if (m_currentMode == ExamMode::MockExam) {
-        m_remainingSeconds = 45 * 60; 
+        m_remainingSeconds = time; 
         m_timer->start(1000); // 每秒触发一次
         
         // 立即更新一次UI

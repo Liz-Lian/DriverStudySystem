@@ -1,153 +1,19 @@
 #include "mainwindow.h"
 
 #include <QApplication>
+#include <QFile>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    // ==================== 全局样式表 (QSS) ====================
-    QString qss = R"(
-        /* 1. 全局设置 */
-        QWidget {
-            background-color: #f5f7fa; /* 柔和灰白背景 */
-            color: #2c3e50;            /* 深灰字体 */
-            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
-            font-size: 14px;
-        }
-
-        /* 2. 按钮 (QPushButton) - 扁平化、圆角、交互感 */
-        QPushButton {
-            background-color: #3498db; /* 科技蓝 */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 8px 16px;
-            font-weight: bold;
-        }
-        QPushButton:hover {
-            background-color: #5dade2; /* 悬停变亮 */
-        }
-        QPushButton:pressed {
-            background-color: #2980b9; /* 按下变深 */
-            padding-top: 9px;          /* 模拟按压位移 */
-            padding-left: 17px;
-        }
-        QPushButton:disabled {
-            background-color: #bdc3c7; /* 禁用灰 */
-            color: #ecf0f1;
-        }
-
-        /* 特殊按钮颜色：退出/删除用红色，开始/添加用绿色 */
-        QPushButton#btnLogout, QPushButton#btnExitWrong, QPushButton#btnDelete {
-            background-color: #e74c3c;
-        }
-        QPushButton#btnLogout:hover, QPushButton#btnExitWrong:hover, QPushButton#btnDelete:hover {
-            background-color: #ec7063;
-        }
-        
-        QPushButton#btnUserLogin, QPushButton#btnAdd, QPushButton#btnSubmit {
-            background-color: #2ecc71;
-        }
-        QPushButton#btnUserLogin:hover, QPushButton#btnAdd:hover, QPushButton#btnSubmit:hover {
-            background-color: #58d68d;
-        }
-
-        /* 3. 输入框 (QLineEdit) - 简约边框 */
-        QLineEdit {
-            background-color: white;
-            border: 1px solid #bdc3c7;
-            border-radius: 4px;
-            padding: 6px;
-            selection-background-color: #3498db;
-        }
-        QLineEdit:focus {
-            border: 1px solid #3498db; /* 聚焦变蓝 */
-        }
-
-        /* 4. 单选框 (QRadioButton) */
-        QRadioButton {
-            spacing: 8px;
-            padding: 4px;
-        }
-        QRadioButton::indicator {
-            width: 16px;
-            height: 16px;
-        }
-        QRadioButton::indicator:unchecked {
-            border: 2px solid #bdc3c7;
-            border-radius: 9px;
-            background: white;
-        }
-        QRadioButton::indicator:checked {
-            border: 2px solid #3498db;
-            border-radius: 9px;
-            background: #3498db;
-        }
-
-        /* 5. 标签 (QLabel) */
-        QLabel {
-            color: #2c3e50;
-        }
-        /* 标题类标签加大加粗 */
-        QLabel#label, QLabel#labelExamQuestion, QLabel#lblWrongQuestion, QLabel#label_2 {
-            font-size: 18px;
-            font-weight: bold;
-            color: #000000;
-        }
-        /* 结果文本 */
-        QLabel#lblCorrectAnswer {
-            font-weight: bold;
-            color: #e67e22; /* 橙色高亮 */
-        }
-
-        /* 6. 列表与表格 (QListWidget, QTableWidget) */
-        QListWidget, QTableWidget {
-            background-color: white;
-            border: 1px solid #bdc3c7;
-            border-radius: 4px;
-            gridline-color: #ecf0f1;
-        }
-        QHeaderView::section {
-            background-color: #ecf0f1;
-            padding: 6px;
-            border: none;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        QTableWidget::item:selected {
-            background-color: #3498db;
-            color: white;
-        }
-
-        /* 7. 选项卡 (QTabWidget) */
-        QTabWidget::pane {
-            border: 1px solid #bdc3c7;
-            background: white;
-            border-radius: 4px;
-        }
-        QTabBar::tab {
-            background: #ecf0f1;
-            padding: 8px 20px;
-            margin-right: 2px;
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-            color: #7f8c8d;
-        }
-        QTabBar::tab:selected {
-            background: #3498db;
-            color: white;
-        }
-        
-        /* 8. 弹窗 (QMessageBox) */
-        QMessageBox {
-            background-color: #f5f7fa;
-        }
-        QMessageBox QLabel {
-            color: #2c3e50;
-        }
-    )";
-    a.setStyleSheet(qss);
+    // 加载 QSS 样式表
+    QFile file(":/style.qss");
+    if (file.open(QFile::ReadOnly)) {
+        QString qss = QLatin1String(file.readAll());
+        a.setStyleSheet(qss);
+        file.close();
+    }
 
     MainWindow w;
     w.show();

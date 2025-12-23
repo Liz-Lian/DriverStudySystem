@@ -503,6 +503,7 @@ D:/Code/DriverSystem/Views/mainwindow.h
  mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/QMainWindow
  mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/QTableWidget
  mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/QTextBrowser
+ mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/QTextEdit
  mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h
  mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemview.h
  mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractscrollarea.h
@@ -946,6 +947,7 @@ D:/Code/DriverSystem/Controllers/AdminController.h
  mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/QLineEdit
  mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/QListWidget
  mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/QTextBrowser
+ mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/QTextEdit
  mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h
  mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemview.h
  mdp:C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractscrollarea.h

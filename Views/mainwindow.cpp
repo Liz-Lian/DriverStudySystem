@@ -6,6 +6,9 @@
 #include <QTableWidgetItem>
 #include <QTimer>
 
+#define EXAM_TIME_LIMIT_SECONDS 2700 // 45分钟
+#define EXAM_QUESTIONS_NUM 10
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -88,8 +91,8 @@ void MainWindow::on_btnUserLogin_clicked()
 
     m_currentUserID = userId;
     
-    // 使用 Controller 开始考试 (默认模拟考试，10题)
-    m_examController->startExam(10, ExamMode::MockExam);
+    // 使用 Controller 开始考试 (模拟考试模式,题目数量和时间在常量中定义)
+    m_examController->startExam(EXAM_QUESTIONS_NUM, ExamMode::MockExam, EXAM_TIME_LIMIT_SECONDS);
     m_examQuestions = m_examController->getExamQuestions();
     
     if (m_examQuestions.isEmpty()) {

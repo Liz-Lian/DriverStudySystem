@@ -17,6 +17,7 @@ include_directories(Models Controllers Views)
 
 set(PROJECT_SOURCES
         main.cpp
+        resources.qrc
         Views/mainwindow.cpp
         Views/MainWindow_Exam.cpp
         Views/MainWindow_Review.cpp
