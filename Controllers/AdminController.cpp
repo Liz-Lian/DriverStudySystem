@@ -9,10 +9,12 @@ AdminController::AdminController(QuestionManager* qm, QObject *parent)
 {
 }
 
-void AdminController::setUiComponents(QListWidget* list, 
-                                      QTextEdit* inputQ, QLineEdit* inputA, QLineEdit* inputB, 
-                                      QLineEdit* inputC, QLineEdit* inputD, QLineEdit* inputAns,
-                                      QLineEdit* inputSearch, QTextBrowser* textResult)
+void AdminController::setUiComponents(
+   QListWidget* list, 
+   QTextEdit* inputQ, QLineEdit* inputA, QLineEdit* inputB, 
+   QLineEdit* inputC, QLineEdit* inputD, QLineEdit* inputAns,
+   QLineEdit* inputSearch, QTextBrowser* textResult
+   )
 {
     m_listQuestions = list;
     m_editQuestion = inputQ;
@@ -161,22 +163,24 @@ void AdminController::onSearchClicked()
 
     QString displayText;
     for (const Question& q : results) {
-        QString item = QString("================================\n"
-                               "【题目ID】: %1\n"
-                               "【题干】: %2\n\n"
-                               "  A. %3\n"
-                               "  B. %4\n"
-                               "  C. %5\n"
-                               "  D. %6\n\n"
-                               "★ 标准答案: %7\n"
-                               "================================\n\n")
-                           .arg(q.id)
-                           .arg(q.content)
-                           .arg(q.optionA)
-                           .arg(q.optionB)
-                           .arg(q.optionC)
-                           .arg(q.optionD)
-                           .arg(q.answer);
+        QString item = QString(
+         "================================\n"
+         "【题目ID】: %1\n"
+         "【题干】: %2\n\n"
+         "  A. %3\n"
+         "  B. %4\n"
+         "  C. %5\n"
+         "  D. %6\n\n"
+         "★ 标准答案: %7\n"
+         "================================\n\n"
+         )
+         .arg(q.id)
+         .arg(q.content)
+         .arg(q.optionA)
+         .arg(q.optionB)
+         .arg(q.optionC)
+         .arg(q.optionD)
+         .arg(q.answer);
 
         displayText.append(item);
     }

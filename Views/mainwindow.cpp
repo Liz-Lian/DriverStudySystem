@@ -6,9 +6,6 @@
 #include <QTableWidgetItem>
 #include <QTimer>
 
-#define EXAM_TIME_LIMIT_SECONDS 2700 // 45分钟
-#define EXAM_QUESTIONS_NUM 10
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)

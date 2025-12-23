@@ -14,7 +14,7 @@ public:
     explicit ExamController(QuestionManager* qm, QObject *parent = nullptr);
 
     // 开始考试
-    void startExam(int count, ExamMode mode);
+    void startExam(int count, ExamMode mode, int time = EXAM_TIME_LIMIT_SECONDS);
     
     // 停止考试
     void stopExam();

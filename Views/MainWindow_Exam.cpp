@@ -170,7 +170,7 @@ void MainWindow::on_btnModeMock_clicked()
     // (如果知识查询是第1个标签，就把1改成0；通常它是第2个，所以是1)
 
     // 逻辑设定：
-    int n = 5; // 暂时先设5道题测试，之后改成100
+    int n = EXAM_QUESTIONS_NUM; 
     
     // 使用 Controller 开始考试
     m_examController->startExam(n, ExamMode::MockExam);
@@ -195,7 +195,7 @@ void MainWindow::on_btnModeFree_clicked()
     ui->tabWidget->setTabEnabled(1, true);
 
     // 界面调整：
-    ui->frameFreeSetup->show(); // 【关键】显示顶部输入栏！
+    ui->frameFreeSetup->show(); // 显示顶部输入栏！
     ui->lcdTimer->hide();       // 隐藏倒计时器
     ui->radioA->hide();
     ui->radioB->hide();
@@ -208,7 +208,7 @@ void MainWindow::on_btnModeFree_clicked()
     ui->labelExamQuestion->setText("请在上方输入题目数量，点击生成开始训练。");
     // 把选项都隐藏或者清空，防止误触 (这里简单处理，不清空也没事，反正没生成题)
 
-    // 直接进考场
+    // 跳转进考场
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -280,7 +280,7 @@ void MainWindow::on_btnLogout_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 }
 
-// 【新增】倒计时逻辑的具体实现
+// 倒计时逻辑的具体实现
 void MainWindow::onTimerUpdated(QString timeStr)
 {
     // 显示到界面上的 LCD 数字屏
