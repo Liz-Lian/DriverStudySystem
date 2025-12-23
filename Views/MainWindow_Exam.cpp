@@ -103,7 +103,7 @@ void MainWindow::on_btnSubmit_clicked()
     }
 
     // 弹窗显示
-    QString msg = QString("Exam Finished!\nUser: %1\nScore: %2 / 100\nCorrect: %3 / %4")
+    QString msg = QString("考试结束!\n用户 : %1\n分数 : %2 / 100\n正确率 : %3 / %4")
                       .arg(m_currentUserID)
                       .arg(score)
                       .arg(correctCount)
