@@ -12,14 +12,15 @@ void MainWindow::showQuestion(int index)
 
     const Question& q = m_examQuestions[index];
 
-    ui->labelExamQuestion->setText(QString("Question %1: %2").arg(index + 1).arg(q.content));
+    // 更新题目索引显示
+    if (ui->lblQuestionIndex) {
+        ui->lblQuestionIndex->setText(QString("题目 %1 / %2").arg(index + 1).arg(m_examQuestions.size()));
+    }
+
+    ui->labelExamQuestion->setText(QString("%1. %2").arg(index + 1).arg(q.content));
     
     // 清除之前的选中状态
     // 必须先 setAutoExclusive(false) 才能取消选中，然后再设回 true
-    QButtonGroup* bg = new QButtonGroup(this); // 临时组或者直接操作
-    // 这里假设 UI 设计中 radioA...radioD 没有被显式放入 QButtonGroup，
-    // 它们通常是自动互斥的（如果父组件相同）。
-    // 为了安全起见，手动处理：
     ui->radioA->setAutoExclusive(false);
     ui->radioB->setAutoExclusive(false);
     ui->radioC->setAutoExclusive(false);
@@ -40,14 +41,37 @@ void MainWindow::showQuestion(int index)
     ui->radioC->setText("C. " + q.optionC);
     ui->radioD->setText("D. " + q.optionD);
 
-    // 如果用户之前回答过这道题（比如实现了“上一题”功能），这里可以恢复选中状态
-    // 但当前需求只有“下一题”，所以通常是空的。
+    // 恢复之前的答案
+    if (index < m_userAnswers.size()) {
+        QString savedAns = m_userAnswers[index];
+        if (savedAns == "A") ui->radioA->setChecked(true);
+        else if (savedAns == "B") ui->radioB->setChecked(true);
+        else if (savedAns == "C") ui->radioC->setChecked(true);
+        else if (savedAns == "D") ui->radioD->setChecked(true);
+    }
     
-    // 控制 Next 按钮状态
-    if (index == m_examQuestions.size() - 1) {
-        ui->btnNext->setEnabled(false);
-    } else {
-        ui->btnNext->setEnabled(true);
+    // 控制按钮状态
+    ui->btnPrev->setEnabled(index > 0);
+    ui->btnNext->setEnabled(index < m_examQuestions.size() - 1);
+}
+
+void MainWindow::on_btnPrev_clicked()
+{
+    // 保存当前题目的答案
+    QString ans = "";
+    if (ui->radioA->isChecked()) ans = "A";
+    else if (ui->radioB->isChecked()) ans = "B";
+    else if (ui->radioC->isChecked()) ans = "C";
+    else if (ui->radioD->isChecked()) ans = "D";
+
+    if (m_currentExamIndex < m_userAnswers.size()) {
+        m_userAnswers[m_currentExamIndex] = ans;
+    }
+
+    // 进入上一题
+    if (m_currentExamIndex > 0) {
+        m_currentExamIndex--;
+        showQuestion(m_currentExamIndex);
     }
 }
 

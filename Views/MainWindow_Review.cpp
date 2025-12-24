@@ -44,12 +44,24 @@ void MainWindow::showWrongQuestion(int index)
     ui->lblCorrectAnswer->setText("正确答案：" + correctAns);
 
     // 控制按钮状态
+    if (ui->btnPrevWrong) {
+        ui->btnPrevWrong->setEnabled(index > 0);
+    }
+
     if (index == m_reviewController->getWrongCount() - 1) {
         ui->btnNextWrong->setEnabled(false);
         ui->btnNextWrong->setText("已是最后一道");
     } else {
         ui->btnNextWrong->setEnabled(true);
         ui->btnNextWrong->setText("下一题");
+    }
+}
+
+void MainWindow::on_btnPrevWrong_clicked()
+{
+    if (m_currentWrongIndex > 0) {
+        m_currentWrongIndex--;
+        showWrongQuestion(m_currentWrongIndex);
     }
 }
 

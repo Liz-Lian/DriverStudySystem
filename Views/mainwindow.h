@@ -42,6 +42,7 @@ private slots:
     void on_btnGenFree_clicked();
     
     // 考试过程
+    void on_btnPrev_clicked();
     void on_btnNext_clicked();
     void on_btnSubmit_clicked();
     // 【新增】返回和退出
@@ -49,6 +50,7 @@ private slots:
     void on_btnLogout_clicked();
 
     // 【新增】错题回顾
+    void on_btnPrevWrong_clicked();
     void on_btnNextWrong_clicked();
     void on_btnExitWrong_clicked();
     
