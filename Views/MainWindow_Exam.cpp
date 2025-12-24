@@ -163,8 +163,8 @@ void MainWindow::on_btnSubmit_clicked()
         m_currentWrongIndex = 0;
         showWrongQuestion(0);
     } else {
-        // 返回登录页或重置
-        ui->stackedWidget->setCurrentIndex(0);
+        // 返回模式选择页
+        ui->stackedWidget->setCurrentIndex(4);
         ui->inputUserID->clear();
     }
 }
@@ -227,6 +227,8 @@ void MainWindow::on_btnModeFree_clicked()
     ui->radioD->hide();
     ui->btnNext->hide();
     ui->btnSubmit->hide();
+    ui->btnPrev->hide(); // 隐藏上一题按钮
+    ui->lblQuestionIndex->hide(); // 隐藏题目索引标签
 
     // 清空考场：先不生成题目，给个空白或者提示
     ui->labelExamQuestion->setText("请在上方输入题目数量，点击生成开始训练。");
@@ -269,6 +271,8 @@ void MainWindow::on_btnGenFree_clicked()
         ui->radioD->show();
         ui->btnNext->show();
         ui->btnSubmit->show();
+        ui->btnPrev->show(); // 显示上一题按钮
+        ui->lblQuestionIndex->show(); // 显示题目索引标签
 
         showQuestion(0); // 显示第1题
         QMessageBox::information(this, "开始", QString("已为您生成 %1 道训练题！").arg(n));

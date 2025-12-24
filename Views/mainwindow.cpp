@@ -70,7 +70,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_btnAdminLogin_clicked()
 {
     QString pwd = ui->inputAdminPwd->text();
-    if (pwd == "123456") {
+    if (pwd == ADMIN_PASSWORD) {
         ui->stackedWidget->setCurrentIndex(1); // 管理员页
         m_adminController->refreshQuestionList();
     } else {
