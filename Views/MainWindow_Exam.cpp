@@ -239,9 +239,18 @@ void MainWindow::on_btnModeFree_clicked()
 // 3. 自由训练模式下，点击“生成题目”
 void MainWindow::on_btnGenFree_clicked()
 {
+    QString strNum = ui->inputFreeNum->text().trimmed();
+    if (strNum.isEmpty()) {
+        QMessageBox::warning(this, "提示", "请输入题目数量！");
+        return;
+    }
+
     // 获取输入的数字
-    int n = ui->inputFreeNum->text().toInt();
-    if (n <= 0) n = 5; // 默认值
+    int n = strNum.toInt();
+    if (n <= 0) {
+        QMessageBox::warning(this, "提示", "题目数量必须大于0！");
+        return;
+    }
 
     // 使用 Controller 开始考试
     m_examController->startExam(n, ExamMode::FreeTraining);
