@@ -88,7 +88,25 @@ if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(DriverSystem)
 endif()
 
-# 自动复制资源文件到构建目录
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/questions.txt
-          ${CMAKE_CURRENT_SOURCE_DIR}/scores.txt   # 把这个也加进去
-     DESTINATION ${CMAKE_BINARY_DIR})
+# 配置阶段：如果构建目录没有文件，才从源码目录复制（避免覆盖用户修改）
+if(NOT EXISTS "${CMAKE_BINARY_DIR}/questions.txt")
+    file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/questions.txt" DESTINATION "${CMAKE_BINARY_DIR}")
+endif()
+
+if(NOT EXISTS "${CMAKE_BINARY_DIR}/scores.txt")
+    file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/scores.txt" DESTINATION "${CMAKE_BINARY_DIR}")
+endif()
+
+# 构建阶段：确保文件存在，但如果已存在则不覆盖 (Windows)
+if(WIN32)
+    file(TO_NATIVE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/questions.txt" SRC_Q)
+    file(TO_NATIVE_PATH "${CMAKE_BINARY_DIR}/questions.txt" DST_Q)
+    file(TO_NATIVE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/scores.txt" SRC_S)
+    file(TO_NATIVE_PATH "${CMAKE_BINARY_DIR}/scores.txt" DST_S)
+
+    add_custom_command(TARGET DriverSystem POST_BUILD
+        COMMAND if not exist "${DST_Q}" copy "${SRC_Q}" "${DST_Q}"
+        COMMAND if not exist "${DST_S}" copy "${SRC_S}" "${DST_S}"
+        COMMENT "Copying assets if missing (Windows)"
+    )
+endif()

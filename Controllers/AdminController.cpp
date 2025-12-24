@@ -52,7 +52,16 @@ void AdminController::refreshQuestionList()
 
 void AdminController::onListRowChanged(int currentRow)
 {
-    if (currentRow < 0 || !m_listQuestions) return;
+    if (currentRow < 0 || !m_listQuestions) {
+        // 如果没有选中项（例如列表被清空），则清空输入框
+        if(m_editQuestion) m_editQuestion->clear();
+        if(m_editA) m_editA->clear();
+        if(m_editB) m_editB->clear();
+        if(m_editC) m_editC->clear();
+        if(m_editD) m_editD->clear();
+        if(m_editAnswer) m_editAnswer->clear();
+        return;
+    }
 
     QListWidgetItem* item = m_listQuestions->item(currentRow);
     int id = item->data(Qt::UserRole).toInt();

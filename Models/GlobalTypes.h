@@ -30,4 +30,4 @@ enum ExamMode {
 // 全局配置常量
 constexpr int EXAM_TIME_LIMIT_SECONDS = 2700; // 45分钟
 constexpr int EXAM_QUESTIONS_NUM = 5;
-constexpr const char* ADMIN_PASSWORD = "159"; // 管理员密码
+constexpr const char* ADMIN_PASSWORD = "123456"; // 管理员密码

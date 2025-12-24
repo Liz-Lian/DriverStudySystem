@@ -158,7 +158,7 @@ build DriverSystem.exe: CXX_EXECUTABLE_LINKER__DriverSystem_Debug CMakeFiles/Dri
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.8.2/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.8.2/mingw_64/lib/libQt6Gui.a  C:/Qt/6.8.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.8.2/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\DriverSystem.dir
-  POST_BUILD = cd .
+  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Code\DriverSystem\build\Desktop_Qt_6_8_2_MinGW_64_bit-Debug && if not exist D:\Code\DriverSystem\build\Desktop_Qt_6_8_2_MinGW_64_bit-Debug\questions.txt copy D:\Code\DriverSystem\questions.txt D:\Code\DriverSystem\build\Desktop_Qt_6_8_2_MinGW_64_bit-Debug\questions.txt && if not exist D:\Code\DriverSystem\build\Desktop_Qt_6_8_2_MinGW_64_bit-Debug\scores.txt copy D:\Code\DriverSystem\scores.txt D:\Code\DriverSystem\build\Desktop_Qt_6_8_2_MinGW_64_bit-Debug\scores.txt"
   PRE_LINK = cd .
   TARGET_FILE = DriverSystem.exe
   TARGET_IMPLIB = libDriverSystem.dll.a
